@@ -65,6 +65,109 @@
         <li>содержимое тега</li>
     </ol>
 
+    <!-- ФОРМЫ -->
+    <!--action - атрибут хранит как правило адрес сервера, но НЕ ДОЛЖЕН быть пустым,как вариант заглушка #
+        method - атрибут отверчаетза метод предачи данных, может иметь2 значения:
+            get -по умолчанию, передача  даных идет в адресной строке, они видны любому пользователю, многократное использование но для малого количества данных
+            post - передает данные скрытно, позволяет отправить больше данных, можно прикреплять файлы!!!!
+        enctype="multipart/form-data" - еще один атрибут 
+        
+        сам тег form этоящик с инструментами, сам по себе он данные не принимает
+    -->
+
+    <form action="" method="post" enctype="multipart/form-data"></form>
+
+    <!-- 
+        input - принимает данные,  ТЕГ СТРОЧНЫЙ, ЧАСТО НАДО ОБВОРАЧИВАТЬ В "DIV", иногда и в <p>
+            type - атрибут определяет метод приема данных от пользователя
+                text - по умолчанию
+                tell - для телефонов, цфровое значение на прием
+                password -при вводе символы заменяються на ******
+                radio - переключатель , радио-кнопка
+                checkbox - атрибут квадратик с флажком, если много и списком то атрибут name должен отличаться, можно добавлять checked  
+                file - панелька с выбором файла, в разных браузерах выглядит по своему
+            name - имя
+            value - значение, если заполнено, то одображаеться в поле, если нет то просто принимает и поле ввода пустое
+            checked - применяеться с radio кнопкой, выставляет точку в том input, где находиться
+            placeholder - атрибут задает подпись поля, она виднявсегда и не отправляеться на сервер
+            disabled - атрибут блокирует поле и данные не передаються наа сервер, может применяться ко всем тегам  внутри form, кроме самой form
+            tabindex - атрибут перехода по нажатию TAB, в радиокнопки по групе значение должно быть одинаковым
+            !!!! name не должны повторяться, исключение примение радиокнопки, там идет обьединение в групы
+
+        textarea  - поле ввода,имеет следующие атрибуты
+            name - имя поля ввода
+            cols - размер (см. ниже)
+            rols - тоже размер , как правило убираються, потом размеры задаються ии контролируються с помощью JS и SCC 
+            
+
+    -->
+    <input type="text" name="username" value="">
+    <input type="password" name="userpass" value="">
+    <div>
+        <input disabled placeholder="Подпись поля" type="text" name="username" value="">
+    </div>
+    <div>
+        <input type="password" name="userpass" value="">
+    </div>
+    <br><br>
+
+
+    <div>
+        <p><input tabindex="2" checked type="radio" name="bear" value="lager"> Светлое пиво</p>
+        <p><input tabindex="2" type="radio" name="bear" value="dark"> Темное пиво</p>
+    </div>
+    <br>
+    <div>
+        <p><input type="radio" name="bear2" value="lager"> Светлое пиво</p>
+        <p><input checked type="radio" name="bear2" value="dark"> Темное пиво</p>
+    </div>
+
+    <div>
+        <p><input type="checkbox" name="car1" value="yes"> Наличие авто</p>
+        <p><input checked type="checkbox" name="car2" value="yes"> Наличие авто</p>
+        <p><input type="checkbox" name="car3" value="yes"> Наличие авто</p>
+        <p><input checked type="checkbox" name="car4" value="yes"> Наличие авто</p>
+    </div>
+    <br>
+    <div>
+        <p><input type="file" name="photo"></p>
+    </div>
+    <br>
+
+    <div>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+    <br>
+
+    <!-- 
+        ! новый тег select
+        внутри тега select помещаеться option
+        select - коробочка выпадающего списка
+            name - атрибут задаеться в select,  id как правило не нужно
+            multiple - атрибут множественного выбора, выпадает весь список
+        
+        option - пункт выпадающего списка
+            value - заполняеться для каждого option отдельно, текст (значение тега) помещаем внутрь каждого option
+            selected  - атрибут, назначающий один из option по умолчанию
+
+    -->
+    <div>
+        <select name="color">
+            <option value="red">Красный</option>
+            <option value="blue">Синий</option>
+            <option value="green">Зеленый</option>
+        </select>
+    </div>
+    <br>
+    <!--  button - кнопка, имеет 2 атрибута type
+                submit - отправляет на сервер
+                reset  - форма очиститься
+        -->
+    <div>
+        <button type="submit">Отправить</button>
+    </div>
+
+
 
 </body>
 
